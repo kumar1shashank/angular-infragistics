@@ -1,8 +1,46 @@
 <p>igx-grid component with auto generated columns below and local data.</p>
 <p>You can read more about configuring the igx-grid component in the
-  <a href="https://github.com/IgniteUI/igniteui-angular/blob/master/projects/igniteui-angular/src/lib/grids/README.md" target="_blank">README</a> or the
-  <a href="https://www.infragistics.com/products/ignite-ui-angular/angular/components/grid/grid" target="_blank">official documentation</a>.
+  <a href="https://github.com/IgniteUI/igniteui-angular/blob/master/projects/igniteui-angular/src/lib/grids/README.md"
+    target="_blank">README</a> or the
+  <a href="https://www.infragistics.com/products/ignite-ui-angular/angular/components/grid/grid"
+    target="_blank">official documentation</a>.
 </p>
-<igx-grid #grid1 [data]="localData" [autoGenerate]="true" (columnInit)="onColumnInit($event)" width="960px" height="550px">
-  <igx-paginator></igx-paginator>
+<igx-grid #grid1 [data]="EmployeeData" [autoGenerate]="false" (columnInit)="onColumnInit($event)" [allowFiltering]="true"
+  filterMode="excelStyleFilter" rowSelection="multiple" cellSelection="multiple" columnSelection="multiple"
+  displayDensity="compact" [moving]="true" width="100%" height="650px">
+
+  <igx-grid-toolbar>
+    <igx-grid-toolbar-actions>
+
+      <igx-grid-toolbar-pinning>
+
+      </igx-grid-toolbar-pinning>
+
+      <igx-grid-toolbar-hiding>
+
+      </igx-grid-toolbar-hiding>
+
+      <igx-grid-toolbar-exporter>
+
+      </igx-grid-toolbar-exporter>
+
+    </igx-grid-toolbar-actions>
+
+  </igx-grid-toolbar>
+
+  <igx-column header="Employee ID" field=EmployeeID></igx-column>
+
+  <igx-column header="First Name" field=FirstName></igx-column>
+
+  <igx-column header="Last Name" field=LastName [hasSummary]="true" [sortable]="true" [editable]="true"
+    [disablePinning]="true" [resizable]="true"></igx-column>
+
+  <igx-column header="Country" field=Country [groupable]="true"></igx-column>
+
+  <igx-column header="Age" field=Age dataType="number"></igx-column>
+
+  <igx-column header="Registerer Date" field=RegistererDate dataType="date"></igx-column>
+
+  <igx-column header="Is Active" field=IsActive></igx-column>
+
 </igx-grid>

@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NewGridComponent } from './newgrid/newgrid.component';
 import { IgxGridModule } from 'igniteui-angular';
+import { HttpClient,HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -16,7 +18,8 @@ import { IgxGridModule } from 'igniteui-angular';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    IgxGridModule
+    IgxGridModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
